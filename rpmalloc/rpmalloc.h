@@ -12,6 +12,7 @@
 #pragma once
 
 #include <stddef.h>
+#include "rpmalloc_export.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -92,61 +93,61 @@ typedef struct rpmalloc_config_t {
 	void (*memory_overwrite)(void* address);
 } rpmalloc_config_t;
 
-extern int
+RPMALLOC_API extern int
 rpmalloc_initialize(void);
 
-extern int
+RPMALLOC_API extern int
 rpmalloc_initialize_config(const rpmalloc_config_t* config);
 
-extern const rpmalloc_config_t*
+RPMALLOC_API extern const rpmalloc_config_t*
 rpmalloc_config(void);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_finalize(void);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_thread_initialize(void);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_thread_finalize(void);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_thread_collect(void);
 
-extern int
+RPMALLOC_API extern int
 rpmalloc_is_thread_initialized(void);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_thread_statistics(rpmalloc_thread_statistics_t* stats);
 
-extern void
+RPMALLOC_API extern void
 rpmalloc_global_statistics(rpmalloc_global_statistics_t* stats);
 
-extern RPMALLOC_RESTRICT void*
+RPMALLOC_API extern RPMALLOC_RESTRICT void*
 rpmalloc(size_t size) RPMALLOC_ATTRIBUTE;
 
-extern void
+RPMALLOC_API extern void
 rpfree(void* ptr);
 
-extern RPMALLOC_RESTRICT void*
+RPMALLOC_API extern RPMALLOC_RESTRICT void*
 rpcalloc(size_t num, size_t size) RPMALLOC_ATTRIBUTE;
 
-extern void*
+RPMALLOC_API extern void*
 rprealloc(void* ptr, size_t size);
 
-extern void*
+RPMALLOC_API extern void*
 rpaligned_realloc(void* ptr, size_t alignment, size_t size, size_t oldsize, unsigned int flags);
 
-extern RPMALLOC_RESTRICT void*
+RPMALLOC_API extern RPMALLOC_RESTRICT void*
 rpaligned_alloc(size_t alignment, size_t size) RPMALLOC_ATTRIBUTE;
 
-extern RPMALLOC_RESTRICT void*
+RPMALLOC_API extern RPMALLOC_RESTRICT void*
 rpmemalign(size_t alignment, size_t size) RPMALLOC_ATTRIBUTE;
 
-extern int
+RPMALLOC_API extern int
 rpposix_memalign(void **memptr, size_t alignment, size_t size);
 
-extern size_t
+RPMALLOC_API extern size_t
 rpmalloc_usable_size(void* ptr);
 
 #ifdef __cplusplus
