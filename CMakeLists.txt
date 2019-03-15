@@ -15,7 +15,7 @@ endif()
 
 # Source Files
 set(HEADERS rpmalloc/rpmalloc.h)
-set(SOURCES rpmalloc/rpmalloc.c)
+set(SOURCES rpmalloc/rpmalloc.cpp)
 
 # Targets
 project(rpmalloc)
