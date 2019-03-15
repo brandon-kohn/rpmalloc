@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.0.2)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
+
 # Build Properties
 set(CMAKE_INSTALL_INCLUDEDIR "include" CACHE PATH "Default relative include path.")
 set(CMAKE_INSTALL_LIBDIR "lib" CACHE PATH "Default relative lib path.")
